@@ -11,10 +11,12 @@ define_target "dream-audio-openal" do |target|
 	end
 	
 	target.depends "Library/Dream"
+	target.depends "Library/vorbis"
+	target.depends "Library/OpenAL"
 	
 	target.provides "Library/Dream/Audio" => "Library/Dream/AudioOpenAL"
 	
 	target.provides "Library/Dream/AudioOpenAL" do
-		append linkflags "-lDreamAudioOpenAL"
+		append linkflags ["-lDreamAudioOpenAL"]
 	end
 end
