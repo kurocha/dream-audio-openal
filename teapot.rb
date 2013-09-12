@@ -20,3 +20,9 @@ define_target "dream-audio-openal" do |target|
 		append linkflags ["-lDreamAudioOpenAL"]
 	end
 end
+
+define_configuration "dream-audio-openal" do |configuration|
+	configuration.public!
+	
+	configuration.require "vorbis"
+end
